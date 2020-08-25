@@ -1,0 +1,33 @@
+import { Template } from 'meteor/templating';
+import { ReactiveVar } from 'meteor/reactive-var';
+
+import './main.html';
+import './eno_strategies';
+
+// Return a random entry from the array
+function pick(cards) {
+    return cards[Math.floor(Math.random()*cards.length)];
+}
+
+// set the Deck to use
+// var strategies = programming_strategies;
+var strategies = eno_strategies;
+
+// pick the first card
+Session.set("card", pick(strategies));
+
+// display the current card
+Template.card_text.card_text = function(){
+    return Session.get("card");
+}
+
+// handle "card" click events
+Template.card.events = {
+    'click #flip': function(e) {
+	e.preventDefault();
+	$(".flip-container").toggleClass("hover");
+	if($(".flip-container").hasClass("hover")) {
+	    Session.set("card", pick(strategies));
+	}
+    }
+}

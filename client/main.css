@@ -1,0 +1,129 @@
+/* CSS declarations go here */
+html, body { background-color:black; font-family:Times,serif; height:100%; margin:0px; padding:0px; }
+.github { color:white; position:absolute; bottom:20px; right:20px; }
+.github img { width:50px; vertical-align:middle;}
+.github a { color:white; text-decoration:none; }
+.big { font-size:2.0em; }
+#flip:focus { outline: 0; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+#flip { cursor: pointer;  -webkit-tap-highlight-color:rgba(0,0,0,0); }
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -ms-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d; 
+    -ms-transform-style: preserve-3d; 
+}
+
+/* START: Accommodating for IE */
+.flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+/* END: Accommodating for IE */
+
+.flip-container {
+    position:absolute;
+    left:50%;
+    margin-left:-250px;
+    top:50%;
+    margin-top:-150px;
+    width:500px;
+    border:0px solid red; 
+}
+.flipper {
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    }
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    background: #333;
+    z-index: 2;
+    }
+
+.back {
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.front, .back {
+    position:absolute;
+    width:100%;
+    height:300px;
+    border-radius:25px;
+}
+
+.front p, .back p { padding:0px; font-size:30px; text-align:center; margin:5px; font-weight:bold; }
+.front p { color:white; }
+.back p { color:black; }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+      .flip-container {
+	  position:absolute;
+	  left:15px;
+	  top:15px;
+	  bottom:15px;
+	  right:15px;
+	  border:0px solid red; 
+	  margin-left:0px;
+	  margin-top:0px;
+	  width:auto;
+	  height:500px;
+      }      
+      .front, .back {
+	  position:absolute;
+	  width:100%;
+	  height:500px;
+	  border-radius:25px;
+      }
+      .github { position:absolute; right:5px; bottom:5px; }
+      .github img { width:30px; }
+      body { padding:0px 0px 0px 0px; }
+}
