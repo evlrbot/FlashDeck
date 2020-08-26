@@ -1,11 +1,11 @@
 let deck = [];
 
-// return a random card
+// return a random card from the deck
 function pick(deck) {
     return deck[Math.floor(Math.random()*deck.length)];
 }
 
-// when the deck is created, get the current deck, then pick a card
+// when the deck UI is created, get the current deck, then pick a card
 Template.deck.onCreated(function(){
     const handle = Meteor.subscribe('decks');
     Tracker.autorun(function() {
