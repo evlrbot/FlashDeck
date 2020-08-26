@@ -1,0 +1,90 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Flash Decks</title>
+</head>
+
+<body>
+  {{>nav}}
+</body>
+
+<template name="layout">
+  {{> Template.dynamic template=main}}
+</template>
+
+<template name="nav">
+  <div id="nav">
+    <i class="fa fa-arrow-up"></i>
+
+    <ul>
+      <li><a href="/">Deck</a></li>
+      <li><a href="/decks">Decks</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+
+  </div>
+</template>
+
+<template name="deck">
+  <div class="flip-container">
+    <div id="card">
+      
+      <!-- card front -->
+      <div id="front">
+	<p id="front_text"><span class="big">Oblique Strategies</span><br/>by Brian Eno & Peter Schmidt</p>
+      </div>
+      
+      <!-- card back -->
+      <div id="back">
+	<p id="back_text"></p>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+
+<template name="about">
+  <div class="flip-container">
+    <div class="about_card">
+      <div style="display:table-cell; vertical-align:middle;">
+	<h1>Flash Deck</h1>
+	<p>by Ryan O'Toole<br/><br/>&copy; 2020</p>
+      </div>
+    </div>
+  </div>
+      
+</template>
+
+<template name="decks">
+  <style>
+    #nav i { color:#666 !important; }
+  </style>
+  <div class="list_decks">
+    <div class="deck">
+      <p>Oblique Strategies</p>
+    </div>
+    <div class="deck">
+      <p>Maths</p>
+    </div>
+    <div class="deck">
+      <p>Physics</p>
+    </div>
+    <div class="deck">
+      <p>Art History</p>
+    </div>
+    <div class="deck">
+      <p>Oblique Strategies</p>
+    </div>
+    <div class="deck">
+      <p>Maths</p>
+    </div>
+    <div class="deck">
+      <p>Physics</p>
+    </div>
+    <div class="deck">
+      <p>Art History</p>
+    </div>
+
+  </div>
+  
+</template>

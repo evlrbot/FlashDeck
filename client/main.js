@@ -1,7 +1,8 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import './main.html';
+import './templates.html';
+import './routes.js';
 import './oblique_strategies.js';
 
 // set the deck
@@ -12,20 +13,39 @@ function pick(deck) {
     return deck[Math.floor(Math.random()*deck.length)];
 }
 
-// card events
-Template.card.events = {
+// deck events
+Template.deck.events = {
     'click #card': function(e) {
 	e.preventDefault();
 
 	if($("#card").hasClass("flipped")) {
-	    console.log("flip front");
 	    $("#card").toggleClass("flipped");
-	    //$("#back").hide();	    
 	} else {
-	    console.log("flip back. reset card.");
 	    $("#card").toggleClass("flipped");
 	    $("#back_text").html(pick(deck));
-	    //$("#back").show();
 	}
     }
 }
+
+Template.nav.events({
+    'click #nav .fa': function(){
+	$("#nav").toggleClass("open");
+	if($("#nav").hasClass("open")){
+	    $("#nav i").removeClass("fa-arrow-up");
+	    $("#nav i").addClass("fa-arrow-down");
+	    $("#nav ul").css("display","block")
+	} else {
+	    $("#nav i").addClass("fa-arrow-up");
+	    $("#nav i").removeClass("fa-arrow-down");
+	    $("#nav ul").css("display","none")
+	}
+    },
+    'click #nav a': function() {
+	$("#nav").toggleClass("open");
+	$("#nav i").addClass("fa-arrow-up");
+	$("#nav i").removeClass("fa-arrow-down");
+	$("#nav ul").css("display","none")
+    }
+});
+
+
