@@ -1,2 +1,2 @@
-# decks
-Decks of flip cards
+# FlashDeck
+Personalizable Study Cards
