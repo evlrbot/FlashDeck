@@ -61,31 +61,11 @@
     #nav i { color:#666 !important; }
   </style>
   <div class="list_decks">
+    {{#each get_decks}}
     <div class="deck">
-      <p>Oblique Strategies</p>
+      <p>{{name}}</p>
     </div>
-    <div class="deck">
-      <p>Maths</p>
-    </div>
-    <div class="deck">
-      <p>Physics</p>
-    </div>
-    <div class="deck">
-      <p>Art History</p>
-    </div>
-    <div class="deck">
-      <p>Oblique Strategies</p>
-    </div>
-    <div class="deck">
-      <p>Maths</p>
-    </div>
-    <div class="deck">
-      <p>Physics</p>
-    </div>
-    <div class="deck">
-      <p>Art History</p>
-    </div>
-
+    {{/each}}
   </div>
   
 </template>
