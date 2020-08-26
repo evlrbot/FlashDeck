@@ -12,30 +12,20 @@ function pick(deck) {
     return deck[Math.floor(Math.random()*deck.length)];
 }
 
-
-Template.card.onCreated(function() {
-    // alert('created');
-    $("#card").html(pick(deck));
-});
-
-Template.card.helpers({
-    card : function(){
-	return pick(deck);
-    }
-});
-
 // card events
 Template.card.events = {
-    'click #flip': function(e) {
+    'click #card': function(e) {
 	e.preventDefault();
 
-	if($(".flip-container").hasClass("hover")) {
-	    $("#card").hide();
-	    $("#card").html(pick(deck));
-	    //Template.instance().card.set(pick(deck));
+	if($("#card").hasClass("flipped")) {
+	    console.log("flip front");
+	    $("#card").toggleClass("flipped");
+	    //$("#back").hide();	    
 	} else {
-	    $("#card").show();
+	    console.log("flip back. reset card.");
+	    $("#card").toggleClass("flipped");
+	    $("#back_text").html(pick(deck));
+	    //$("#back").show();
 	}
-	$(".flip-container").toggleClass("hover");
     }
 }

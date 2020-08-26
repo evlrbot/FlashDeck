@@ -4,32 +4,28 @@
 </head>
 
 <body>
-  <script src="/roncioso-Flip-jQuery-5f5d9a4/jquery.flip.min.js"></script>
+
   {{> card}}
+
   <div class="github">
-    <a href="https://github.com/evlrbot/ObliqueStrategies" target="_blank"><img src="/github-10-xxl.png"></a>
+    <a href="https://github.com/evlrbot/decks" target="_blank"><img src="/github-10-xxl.png"></a>
   </div>
+
 </body>
 
 <template name="card">
-  <div id="flip" class="flip-container">
-    <div class="flipper">
-
-      <!-- front -->
-      <table class="front">
-	<tr>
-	  <td valign="middle">
-	    <p><span class="big">Oblique Strategies</span><br/>by Brian Eno & Peter Schmidt</p>
-	  </td>
-	</tr>
-      </table>
-
-      <!-- back -->
-      <table class="back">
-	<tr>
-	  <td valign="middle"><p id="card">{{card}}</p></td>
-	</tr>
-    </table>
+  <div class="flip-container">
+    <div id="card">
+      
+      <!-- card front -->
+      <div id="front">
+	<p id="front_text"><span class="big">Oblique Strategies</span><br/>by Brian Eno & Peter Schmidt</p>
+      </div>
+      
+      <!-- card back -->
+      <div id="back">
+	<p id="back_text"></p>
+      </div>
 
     </div>
   </div>
