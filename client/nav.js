@@ -18,3 +18,9 @@ Template.nav.events({
 	$("#nav ul").css("display","none")
     }
 });
+
+Template.nav.helpers({
+    current_deck_name() {
+	return Session.get('deck');
+    }
+});

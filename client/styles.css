@@ -15,7 +15,7 @@ html, body { background-color:black; font-family:Times,serif; height:100%; margi
 
 .decks_list {}
 .deck { background:white; width: 350px; margin:25px auto; border-radius:25px;}
-.deck p { font-size:2.0em; font-weight:bold; padding:25px; text-align:center;} 
+.deck p { font-size:2.0em; font-weight:bold; padding:25px; text-align:center; } 
 
 .big { font-size:2.0em; }
 
@@ -61,12 +61,9 @@ html, body { background-color:black; font-family:Times,serif; height:100%; margi
     display:table;
 }
 
-
-#card p { padding:0px; font-size:30px; text-align:center; margin:5px; font-weight:bold; vertical-align: middle; display:table-cell; }
+#card p { padding:0px; font-size:3.0em; text-align:center; margin:5px; font-weight:bold; vertical-align: middle; display:table-cell; user-select: none !important; border:0px solid red; }
 #front p { color:white; }
 #back p { color:black; }
-
-
 
 @media only screen 
   and (min-device-width: 320px) 
